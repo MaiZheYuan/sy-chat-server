@@ -1,0 +1,68 @@
+{
+	"data": [
+		{
+			"roomPassword": "123",
+			"roomName": "测试房间",
+			"userId": "yyj744132102",
+			"members": [
+				"yyj744132102"
+			]
+		},
+		{
+			"roomPassword": "dfsdfd",
+			"roomName": "dsfsdfd",
+			"userId": "yyj744132102",
+			"members": [
+				"yyj744132102"
+			]
+		},
+		{
+			"roomPassword": "wqeqwe",
+			"roomName": "wwewe",
+			"userId": "yyj744132102",
+			"members": [
+				"yyj744132102"
+			]
+		},
+		{
+			"roomPassword": "wqeqwe",
+			"roomName": "wwewe",
+			"userId": "yyj744132102",
+			"members": [
+				"yyj744132102"
+			]
+		},
+		{
+			"roomPassword": "ddf",
+			"roomName": "gfdgdfgdf",
+			"userId": "yyj744132102",
+			"members": [
+				"yyj744132102"
+			]
+		},
+		{
+			"roomPassword": "ddf",
+			"roomName": "gfdgdfgdf",
+			"userId": "yyj744132102",
+			"members": [
+				"yyj744132102"
+			]
+		},
+		{
+			"roomPassword": "dfsd",
+			"roomName": "fdsfsdf",
+			"userId": "yyj744132102",
+			"members": [
+				"yyj744132102"
+			]
+		},
+		{
+			"roomPassword": "fsddfsd",
+			"roomName": "fsdfsdfsd",
+			"userId": "yyj744132102",
+			"members": [
+				"yyj744132102"
+			]
+		}
+	]
+}
