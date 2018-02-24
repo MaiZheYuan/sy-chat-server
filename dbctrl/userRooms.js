@@ -21,7 +21,7 @@ function userRoomPush(info){
     return new Promise((res,rej)=>{
         var users = Users.usersRead();
         var user;
-        ( user = users[info.userId] ) && rej({data:"将room关联到user失败",code:403});
+        !( user = users[info.userId] ) && rej({data:"将room关联到user失败,用户不存在",code:403});
         user.rooms = baseTool.concatUnique(user.rooms || [],info.rooms);
         Users.usersWrite(users);
         res({data:user.rooms.length,code:200})
