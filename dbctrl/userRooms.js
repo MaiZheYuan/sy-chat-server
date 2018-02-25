@@ -13,7 +13,7 @@ function userRoomGet(info){
         user = users[info.userId];
         user.password !== info.password
             && rej({data:"",code:403});
-        resData = user.rooms;
+        resData = user.rooms || [];
         res({data:resData,code:200});
     })
 };
@@ -22,7 +22,8 @@ function userRoomPush(info){
         var users = Users.usersRead();
         var user;
         !( user = users[info.userId] ) && rej({data:"将room关联到user失败,用户不存在",code:403});
-        user.rooms = baseTool.concatUnique(user.rooms || [],info.rooms);
+        user.rooms = user.rooms || [];
+        user.rooms.indexOf(info.roomName)<0 && user.rooms.push(info.roomName);
         Users.usersWrite(users);
         res({data:user.rooms.length,code:200})
     })

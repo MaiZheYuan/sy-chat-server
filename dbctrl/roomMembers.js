@@ -15,24 +15,22 @@ function roomMembersGet(info){
         var rooms = Rooms.roomsRead();
         rooms.data = rooms.data || rej({data:resData,code:404});
         var room = roomFind(info.roomName) || rej({data:resData,code:404});
-        var roomMemberIds = room.members || rej({data:resData,code:404});
-        var users = Users.usersRead();
-        roomMemberIds.forEach(item=>{
-            resData.push( users[item] );
-        });
-        res({data:resData,code:200});
+        room.members = room.members || [];
+        res({data:room.members,code:200});
     })
 };
 function roomMembersPush(info){
     return new Promise((res,rej)=>{
         var rooms = Rooms.roomsRead();
         var room;
-        rooms.data = rooms.data || rej({data:"",code:403});
+        rooms.data = rooms.data || rej({data:"",code:404});
         for(let item of rooms.data){
-            if(item.roomName === info.roomName) { return room = item };
+            if(item.roomName === info.roomName) { room = item };
         }
-        !room && rej({data:"",code:403});
-        room.members = concatUnique(room.members,info.users);
+        !room && rej({data:"",code:404});
+        room.roomPassword !==info.roomPassword && rej({data:"",code:403});
+        room.members = room.members || [];
+        room.members.indexOf(info.userId)<0 && room.members.push(info.userId);
         Rooms.roomsWrite(rooms);
         res({data:room.members.length,code:200})
     })

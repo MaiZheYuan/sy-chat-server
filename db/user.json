@@ -27,31 +27,38 @@
 	"dsfsdfsdf342": {
 		"userId": "dsfsdfsdf342",
 		"password": "sdfsdf2334232",
-		"nickname": "第三方"
+		"nickname": "第三方",
+		"rooms": [
+			"测试房间1",
+			"测试房间2"
+		]
 	},
 	"yyj744132102": {
 		"userId": "yyj744132102",
 		"password": "yyj744132102",
 		"nickname": "袁远俊",
 		"rooms": [
-			"fdgfdg",
-			"测试房间",
-			"dsfsdfd",
-			"wwewe",
-			"gfdgdfgdf",
-			"fdsfsdf",
-			"fsdfsdfsd",
-			"dfdfggfhgfh",
-			"w3434",
-			"dsfsdfdfsdfewrwer",
-			"543545",
-			"344556",
-			"reewe"
+			"测试房间1",
+			"测试房间2",
+			"啦啦啦",
+			"B23-326",
+			"上登陆打开来看风景上登陆方法"
 		]
 	},
 	"yyj742fsdsdfsdsdf": {
 		"userId": "yyj742fsdsdfsdsdf",
 		"password": "yyj742fsdsdfsdsdf",
 		"nickname": "地方"
+	},
+	"yyj744132100": {
+		"userId": "yyj744132100",
+		"password": "yyj744132100",
+		"nickname": "我是测试",
+		"rooms": [
+			"测试房间4",
+			"测试房间1",
+			"测试房间2",
+			"啦啦啦"
+		]
 	}
 }

@@ -33,7 +33,6 @@ router.post('/rooms', function(req, res, next) {
         .push(params)
         .then(result=>{
             //新增后进行关联
-            params.rooms = [params.roomName];
             userRoomsCtrl
                 .push(params)
                 .then(rs=>{ res.json(rs) },rj=>{ res.json(rj) })
@@ -50,8 +49,16 @@ router.get('/rooms', function(req, res, next) {
  * room中的user管理
  */
 router.post('/roomMembers', function(req, res, next) {
-    roomMembersCtrl.push(req.body.params)
-        .then(result=>{ res.json(result) },result=>{ res.json(result) })
+    var params = req.body.params;
+    roomMembersCtrl.push(params)
+        .then(result=>{
+            userRoomsCtrl
+                .push(params)
+                .then(rs=>{
+                    res.json(rs)
+                },rj=>{ res.json(rj) })
+                .catch();
+        },result=>{ res.json(result) })
         .catch(err=>{})
 });
 router.get('/roomMembers', function(req, res, next) {
@@ -62,11 +69,17 @@ router.get('/roomMembers', function(req, res, next) {
 /**
  * user中的room管理
  */
-router.post('/userRooms', function(req, res, next) {
-    userRoomsCtrl.push(req.body.params)
-        .then(result=>{ res.json(result) },result=>{ res.json(result) })
-        .catch(err=>{})
-});
+/*router.post('/userRooms', function(req, res, next) {
+    var params = req.body.params;
+    userRoomsCtrl
+        .push(params)
+        .then(rs=>{
+            roomMembersCtrl.push(params)
+                .then(result=>{ res.json(result) },result=>{ res.json(result) })
+                .catch(err=>{})
+        },rj=>{ res.json(rj) })
+        .catch();
+});*/
 router.get('/userRooms', function(req, res, next) {
     userRoomsCtrl.get(req.query)
         .then(result=>{ res.json(result) },result=>{ res.json(result) })
