@@ -1,61 +1,13 @@
 {
-	"data": [
-		{
-			"roomPassword": "123",
-			"roomName": "测试房间1",
-			"userId": "werwer",
-			"members": [
-				"yyj744132102",
-				"dsfsdfsdf342",
-				"yyj744132100",
-				"yyj744132101"
-			]
-		},
-		{
-			"roomPassword": "123",
-			"roomName": "测试房间2",
-			"userId": "rewrwe",
-			"members": [
-				"yyj744132102",
-				"dsfsdfsdf342",
-				"yyj744132100"
-			]
-		},
-		{
-			"roomPassword": "芝麻开门",
-			"roomName": "啦啦啦",
-			"userId": "yyj744132102",
-			"members": [
-				"yyj744132102",
-				"yyj744132100"
-			]
-		},
-		{
-			"roomPassword": "你他妈是谁",
-			"roomName": "B23-326",
-			"userId": "yyj744132102",
-			"members": [
-				"yyj744132102",
-				"dsfsdfsdf342",
-				"yyj744132101"
-			]
-		},
-		{
-			"roomPassword": "经济纠纷",
-			"roomName": "上登陆打开来看风景上登陆方法",
-			"userId": "yyj744132102",
-			"members": [
-				"yyj744132102"
-			]
-		},
-		{
-			"roomPassword": "123",
-			"roomName": "测试房间4",
-			"userId": "yyj744132100",
-			"members": [
-				"yyj744132100",
-				"yyj744132101"
-			]
-		}
-	]
+  "data": [
+    {
+      "roomPassword": "芝麻开门",
+      "roomName": "测试房间1",
+      "userId": "yyj744132102",
+      "roomId": 1519642569852,
+      "members": [
+        "yyj744132102"
+      ]
+    }
+  ]
 }

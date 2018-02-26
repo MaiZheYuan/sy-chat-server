@@ -39,7 +39,8 @@ function roomsPush(info){
     return new Promise((res,rej)=>{
         var rooms = roomsRead();
         rooms.data = rooms.data || [];
-        roomFind(info.roomName) && rej({data:"",code:403});
+        roomFind(info.roomName) && rej({data:"新建失败！房间名已存在！",code:403});
+        info.roomId = new Date().getTime();
         info.members = [info.userId];
         rooms.data.push(info);
         roomsWrite(rooms);

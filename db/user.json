@@ -1,74 +1,10 @@
 {
-	"dsfdsf2333": {
-		"userId": "dsfdsf2333",
-		"password": "dsfdsf2333",
-		"nickname": "大是大"
-	},
-	"dsfdsf2333fdfdf": {
-		"userId": "dsfdsf2333fdfdf",
-		"password": "dsfdsf2333",
-		"nickname": "大是大"
-	},
-	"fdfsdfsdfsdf34": {
-		"userId": "fdfsdfsdfsdf34",
-		"password": "fsdfsdf34",
-		"nickname": "防守打法"
-	},
-	"fdfsdfsdfsdf34ds": {
-		"userId": "fdfsdfsdfsdf34ds",
-		"password": "fsdfsdf34",
-		"nickname": "防守打法"
-	},
-	"sfsdfsdfsdfsdf43244": {
-		"userId": "sfsdfsdfsdfsdf43244",
-		"password": "fkdsdfjlkjlsk433244",
-		"nickname": "是是否"
-	},
-	"dsfsdfsdf342": {
-		"userId": "dsfsdfsdf342",
-		"password": "sdfsdf2334232",
-		"nickname": "第三方",
-		"rooms": [
-			"测试房间1",
-			"测试房间2"
-		]
-	},
 	"yyj744132102": {
 		"userId": "yyj744132102",
 		"password": "yyj744132102",
-		"nickname": "袁远俊",
-		"rooms": [
-			"测试房间1",
-			"测试房间2",
-			"啦啦啦",
-			"B23-326",
-			"上登陆打开来看风景上登陆方法"
-		]
-	},
-	"yyj742fsdsdfsdsdf": {
-		"userId": "yyj742fsdsdfsdsdf",
-		"password": "yyj742fsdsdfsdsdf",
-		"nickname": "地方"
-	},
-	"yyj744132100": {
-		"userId": "yyj744132100",
-		"password": "yyj744132100",
-		"nickname": "我是测试",
-		"rooms": [
-			"测试房间4",
-			"测试房间1",
-			"测试房间2",
-			"啦啦啦"
-		]
-	},
-	"yyj744132101": {
-		"userId": "yyj744132101",
-		"password": "yyj744132101",
 		"nickname": "老夫撩发少年狂",
 		"rooms": [
-			"测试房间1",
-			"测试房间4",
-			"B23-326"
+			"测试房间1"
 		]
 	}
 }
