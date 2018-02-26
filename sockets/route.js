@@ -1,24 +1,29 @@
-var rooms = {};
 var curClent = null;
+var rooms = {};
 var router = function (client, mes) {
     curClent = client;
     if (typeof routes[mes.type] === "function") routes[mes.type](mes);
 };
 var broadcast = function (mes) {
     var room = rooms[mes.roomId];
-    for( let user in room) {
-        user.emit("serverMes",mes.data)
+    mes.userInfo = curClent._$userInfo;
+    for( var client in room) {
+        room[client].emit("serverMes",mes)
     }
 }
 var routes = {
     roomJoin(mes) {
+        curClent._$userInfo = mes.data;
         var room = rooms[mes.roomId] || {};
-        room[mes.userId] = curClent;
+        room[mes.data.userId] = curClent;
+        rooms[mes.roomId] = room;
         broadcast(mes)
     },
     roomLeave(mes) {
+        if(!curClent._$userInfo) return;
         var room = rooms[mes.roomId] || {};
-        room[mes.userId] = null;
+        room[curClent._$userInfo.userId] = null;
+        rooms[mes.roomId] = room;
         broadcast(mes)
     },
     chatTxt(mes) {

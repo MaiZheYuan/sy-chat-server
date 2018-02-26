@@ -46,5 +46,6 @@ function roomMembersDelete(info){
 };
 exports.get = roomMembersGet;
 exports.push = roomMembersPush;
+exports.roomFind = roomFind;
 // exports.update = roomsUpdate;
 // exports.delete = roomMembersDelete;

@@ -27,7 +27,7 @@ function userGet(info){
         user = users[info.userId];
         user.password !== info.password
             && rej({data:"登陆失败！密码错误！",code:403});
-        resData = {username:user.username};
+        resData = {nickname:user.nickname};
         res({data:resData,code:200});
     })
 };

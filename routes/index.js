@@ -25,7 +25,14 @@ router.get('/user', function(req, res, next) {
         .catch(err=>{})
 });
 /**
-*room管理
+ *room管理
+ */
+router.get('/room', function(req, res, next) {
+    var room = roomMembersCtrl.roomFind(req.query.roomName);
+    room ? res.json({data:room,code:200}) : res({data:"获取房间id失败！",code:200});
+});
+/**
+*rooms管理
  */
 router.post('/rooms', function(req, res, next) {
     var params = req.body.params;

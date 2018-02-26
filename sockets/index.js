@@ -8,8 +8,8 @@ function running(server) {
     io = socketio.listen(server);
     io.on("connection", function (client) {
         client.on('disconnect', function(client){ });
-        client.on("clientMes", function (client,mes) {
-            socketRouter(io,mes)
+        client.on("clientMes", function (mes) {
+            socketRouter(client,mes)
         });
     });
     return io;
