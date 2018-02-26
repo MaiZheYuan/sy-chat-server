@@ -9,6 +9,16 @@ function usersRead() {
 function usersWrite(users) {
     fs.writeFileSync( userDb, JSON.stringify(users,null,"\t") );
 }
+function usersFind(userIds){
+    var users = usersRead();
+    return userIds.map(item=>{
+        var user = users[item]
+        return {
+            userId:user.userId,
+            nickname:user.nickname
+        }
+    })
+}
 function userGet(info){
     return new Promise((res,rej)=>{
         var users = usersRead();
@@ -52,6 +62,6 @@ exports.get = userGet;
 exports.push = userPush;
 exports.usersRead = usersRead;
 exports.usersWrite = usersWrite;
+exports.usersFind = usersFind;
 // exports.update = userUpdate;
 // exports.delete = userDelete;
-exports.model = usersRead();

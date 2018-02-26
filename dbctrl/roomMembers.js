@@ -1,4 +1,3 @@
-var Users = require("./user.js");
 var Rooms = require("./rooms.js");
 
 function roomFind(roomName){

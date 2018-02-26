@@ -62,8 +62,12 @@ router.post('/roomMembers', function(req, res, next) {
         .catch(err=>{})
 });
 router.get('/roomMembers', function(req, res, next) {
+    var users = [];
     roomMembersCtrl.get(req.query)
-        .then(result=>{ res.json(result) },result=>{ res.json(result) })
+        .then(result=>{
+            users = userCtrl.usersFind(result.data);
+            res.json({data:users,code:200});
+        },result=>{ res.json(result) })
         .catch(err=>{})
 });
 /**
