@@ -1,4 +1,5 @@
 window.SYRESOURCE= {
+    chatSocket:null,
     user:"/user",
     users:"/users",
     room:"/room",
