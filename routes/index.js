@@ -68,12 +68,26 @@ router.post('/roomMembers', function(req, res, next) {
         },result=>{ res.json(result) })
         .catch(err=>{})
 });
-router.get('/roomMembers', function(req, res, next) {
+/*router.get('/roomMembers', function(req, res, next) {
     var users = [];
     roomMembersCtrl.get(req.query)
         .then(result=>{
             users = userCtrl.usersFind(result.data);
             res.json({data:users,code:200});
+        },result=>{ res.json(result) })
+        .catch(err=>{})
+});*/
+router.get('/roomMembers', function(req, res, next) {
+    var users = [];
+    var resData = [];
+    roomMembersCtrl.get(req.query)
+        .then(result=>{
+            users = userCtrl.usersFind(result.data);
+            resData = users.map(item=>{
+                item.isInRoom = result.chatRoom[item.userId] ? true : false;
+                return item;
+            })
+            res.json({data:resData,code:200});
         },result=>{ res.json(result) })
         .catch(err=>{})
 });

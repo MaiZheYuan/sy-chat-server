@@ -1,4 +1,5 @@
 var Rooms = require("./rooms.js");
+var chattingRoomGet = require("../sockets/route").roomFind;
 
 function roomFind(roomName){
     var rooms = Rooms.roomsRead();
@@ -8,7 +9,26 @@ function roomFind(roomName){
     }
     return false;
 };
+function roomFindById(roomId){
+    var rooms = Rooms.roomsRead();
+    if(!rooms.data) return false;
+    for(let room of rooms.data){
+        if(room.roomId == roomId) return room;
+    }
+    return false;
+};
 function roomMembersGet(info){
+    return new Promise((res,rej)=>{
+        var resData = [];
+        var rooms = Rooms.roomsRead();
+        rooms.data = rooms.data || rej({data:resData,code:404});
+        var room = roomFindById(info.roomId) || rej({data:resData,code:404});
+        room.members = room.members || [];
+        var chatRoom = chattingRoomGet(info.roomId);
+        res({data:room.members,chatRoom:chatRoom,code:200});
+    })
+};
+function roomMembersStatuGet(info){
     return new Promise((res,rej)=>{
         var resData = [];
         var rooms = Rooms.roomsRead();
@@ -47,5 +67,6 @@ function roomMembersDelete(info){
 exports.get = roomMembersGet;
 exports.push = roomMembersPush;
 exports.roomFind = roomFind;
+exports.roomFindById = roomFindById;
 // exports.update = roomsUpdate;
 // exports.delete = roomMembersDelete;

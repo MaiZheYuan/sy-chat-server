@@ -8,9 +8,9 @@ var broadcast = function (mes) {
     var room = rooms[mes.roomId];
     mes.userInfo = curClent._$userInfo;
     for( var client in room) {
-        room[client].emit("serverMes",mes)
+        room[client] && room[client].emit("serverMes",mes)
     }
-}
+};
 var routes = {
     roomJoin(mes) {
         curClent._$userInfo = mes.data;
@@ -38,6 +38,10 @@ var routes = {
     chatVideo(mes) {
     
     },
+};
+function roomFind(roomId) {
+    return rooms[roomId];
 }
 
-module.exports = router;
+exports.router = router;
+exports.roomFind = roomFind;

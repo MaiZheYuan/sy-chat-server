@@ -1,5 +1,5 @@
 var socketio = require("socket.io");
-var socketRouter = require("./route");
+var socketRouter = require("./route").router;
 
 var io = null;
 
@@ -7,7 +7,9 @@ var io = null;
 function running(server) {
     io = socketio.listen(server);
     io.on("connection", function (client) {
-        client.on('disconnect', function(client){ });
+        client.on('disconnect', function(client){
+        
+        });
         client.on("clientMes", function (mes) {
             socketRouter(client,mes)
         });
