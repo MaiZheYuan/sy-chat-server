@@ -8,7 +8,7 @@ function running(server) {
     io = socketio.listen(server);
     io.on("connection", function (client) {
         client.on('disconnect', function(client){
-        
+            delete client;
         });
         client.on("clientMes", function (mes) {
             socketRouter(client,mes)
