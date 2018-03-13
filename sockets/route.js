@@ -36,7 +36,11 @@ var routes = {
     
     },
     chatVideo(mes) {
-    
+        var room = rooms[mes.roomId] || {};
+        var target = room[mes.targetUser.userId];
+        if(!target) return;
+        mes.userInfo = curClent._$userInfo;
+        target.emit("serverMes",mes);
     },
 };
 function roomFind(roomId) {

@@ -44,5 +44,21 @@
 			"测试房间5",
 			"测试房间2"
 		]
+	},
+	"yyj744132108": {
+		"userId": "yyj744132108",
+		"password": "yyj744132108",
+		"nickname": "fksdjflks",
+		"rooms": [
+			"测试房间5"
+		]
+	},
+	"hgphgp001": {
+		"userId": "hgphgp001",
+		"password": "hgphgp001",
+		"nickname": "hgphgp001",
+		"rooms": [
+			"测试房间5"
+		]
 	}
 }
