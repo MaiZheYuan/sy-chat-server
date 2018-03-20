@@ -39,7 +39,6 @@ var routes = {
         var room = rooms[mes.roomId] || {};
         var target = room[mes.targetUser.userId];
         if(!target) return;
-        mes.userInfo = curClent._$userInfo;
         target.emit("serverMes",mes);
     },
 };
